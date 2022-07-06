@@ -70,7 +70,7 @@ namespace cse210_10.Game.Directing
 
         private void ActivateBall(Cast cast)
         {
-            Ball ball = (Ball)cast.GetFirstActor(Constants.BALL_GROUP);
+            Laser ball = (Laser)cast.GetFirstActor(Constants.BALL_GROUP);
             ball.Release();
         }
 
@@ -114,7 +114,7 @@ namespace cse210_10.Game.Directing
 
             script.ClearAllActions();
 
-            ControlRacketAction action = new ControlRacketAction(KeyboardService);
+            ControlShipAction action = new ControlShipAction(KeyboardService);
             script.AddAction(Constants.INPUT, action);
 
             AddUpdateActions(script);    
@@ -153,7 +153,7 @@ namespace cse210_10.Game.Directing
         
             Body body = new Body(position, size, velocity);
             Image image = new Image(Constants.BALL_IMAGE);
-            Ball ball = new Ball(body, image, false);
+            Laser ball = new Laser(body, image, false);
         
             cast.AddActor(Constants.BALL_GROUP, ball);
         }
@@ -186,7 +186,7 @@ namespace cse210_10.Game.Directing
                     Body body = new Body(position, size, velocity);
                     Animation animation = new Animation(images, Constants.BRICK_RATE, 1);
                     
-                    Brick brick = new Brick(body, animation, points, false);
+                    Alien brick = new Alien(body, animation, points, false);
                     cast.AddActor(Constants.BRICK_GROUP, brick);
                 }
             }
@@ -242,7 +242,7 @@ namespace cse210_10.Game.Directing
         
             Body body = new Body(position, size, velocity);
             Animation animation = new Animation(Constants.RACKET_IMAGES, Constants.RACKET_RATE, 0);
-            Racket racket = new Racket(body, animation, false);
+            Ship racket = new Ship(body, animation, false);
         
             cast.AddActor(Constants.RACKET_GROUP, racket);
         }
@@ -300,9 +300,9 @@ namespace cse210_10.Game.Directing
         {
             script.AddAction(Constants.OUTPUT, new StartDrawingAction(VideoService));
             script.AddAction(Constants.OUTPUT, new DrawHudAction(VideoService));
-            script.AddAction(Constants.OUTPUT, new DrawBallAction(VideoService));
-            script.AddAction(Constants.OUTPUT, new DrawBricksAction(VideoService));
-            script.AddAction(Constants.OUTPUT, new DrawRacketAction(VideoService));
+            script.AddAction(Constants.OUTPUT, new DrawLaserAction(VideoService));
+            script.AddAction(Constants.OUTPUT, new DrawAliensAction(VideoService));
+            script.AddAction(Constants.OUTPUT, new DrawShipAction(VideoService));
             script.AddAction(Constants.OUTPUT, new DrawDialogAction(VideoService));
             script.AddAction(Constants.OUTPUT, new EndDrawingAction(VideoService));
         }
@@ -320,11 +320,11 @@ namespace cse210_10.Game.Directing
 
         private void AddUpdateActions(Script script)
         {
-            script.AddAction(Constants.UPDATE, new MoveBallAction());
-            script.AddAction(Constants.UPDATE, new MoveRacketAction());
+            script.AddAction(Constants.UPDATE, new MoveLaserAction());
+            script.AddAction(Constants.UPDATE, new MoveShipAction());
             script.AddAction(Constants.UPDATE, new CollideBordersAction(PhysicsService, AudioService));
-            script.AddAction(Constants.UPDATE, new CollideBrickAction(PhysicsService, AudioService));
-            script.AddAction(Constants.UPDATE, new CollideRacketAction(PhysicsService, AudioService));
+            script.AddAction(Constants.UPDATE, new CollideAlienAction(PhysicsService, AudioService));
+            script.AddAction(Constants.UPDATE, new CollideShipAction(PhysicsService, AudioService));
             script.AddAction(Constants.UPDATE, new CheckOverAction());     
         }
     }

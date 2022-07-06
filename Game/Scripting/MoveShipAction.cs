@@ -2,15 +2,15 @@ using cse210_10.Game.Casting;
 
 namespace cse210_10.Game.Scripting
 {
-    public class MoveRacketAction : Action
+    public class MoveShipAction : Action
     {
-        public MoveRacketAction()
+        public MoveShipAction()
         {
         }
 
         public void Execute(Cast cast, Script script, ActionCallback callback)
         {
-            Racket racket = (Racket)cast.GetFirstActor(Constants.RACKET_GROUP);
+            Ship racket = (Ship)cast.GetFirstActor(Constants.RACKET_GROUP);
             Body body = racket.GetBody();
             Point position = body.GetPosition();
             Point velocity = body.GetVelocity();

@@ -17,7 +17,7 @@ namespace cse210_10.Game.Scripting
 
         public void Execute(Cast cast, Script script, ActionCallback callback)
         {
-            Ball ball = (Ball)cast.GetFirstActor(Constants.BALL_GROUP);
+            Laser ball = (Laser)cast.GetFirstActor(Constants.BALL_GROUP);
             Body body = ball.GetBody();
             Point position = body.GetPosition();
             int x = position.GetX();

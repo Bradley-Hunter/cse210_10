@@ -5,12 +5,12 @@ using cse210_10.Game.Services;
 
 namespace cse210_10.Game.Scripting
 {
-    public class CollideBrickAction : Action
+    public class CollideAlienAction : Action
     {
         private AudioService audioService;
         private PhysicsService physicsService;
         
-        public CollideBrickAction(PhysicsService physicsService, AudioService audioService)
+        public CollideAlienAction(PhysicsService physicsService, AudioService audioService)
         {
             this.physicsService = physicsService;
             this.audioService = audioService;
@@ -18,13 +18,13 @@ namespace cse210_10.Game.Scripting
 
         public void Execute(Cast cast, Script script, ActionCallback callback)
         {
-            Ball ball = (Ball)cast.GetFirstActor(Constants.BALL_GROUP);
+            Laser ball = (Laser)cast.GetFirstActor(Constants.BALL_GROUP);
             List<Actor> bricks = cast.GetActors(Constants.BRICK_GROUP);
             Stats stats = (Stats)cast.GetFirstActor(Constants.STATS_GROUP);
             
             foreach (Actor actor in bricks)
             {
-                Brick brick = (Brick)actor;
+                Alien brick = (Alien)actor;
                 Body brickBody = brick.GetBody();
                 Body ballBody = ball.GetBody();
 

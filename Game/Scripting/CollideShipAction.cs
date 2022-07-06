@@ -4,12 +4,12 @@ using cse210_10.Game.Services;
 
 namespace cse210_10.Game.Scripting
 {
-    public class CollideRacketAction : Action
+    public class CollideShipAction : Action
     {
         private AudioService audioService;
         private PhysicsService physicsService;
         
-        public CollideRacketAction(PhysicsService physicsService, AudioService audioService)
+        public CollideShipAction(PhysicsService physicsService, AudioService audioService)
         {
             this.physicsService = physicsService;
             this.audioService = audioService;
@@ -17,8 +17,8 @@ namespace cse210_10.Game.Scripting
 
         public void Execute(Cast cast, Script script, ActionCallback callback)
         {
-            Ball ball = (Ball)cast.GetFirstActor(Constants.BALL_GROUP);
-            Racket racket = (Racket)cast.GetFirstActor(Constants.RACKET_GROUP);
+            Laser ball = (Laser)cast.GetFirstActor(Constants.BALL_GROUP);
+            Ship racket = (Ship)cast.GetFirstActor(Constants.RACKET_GROUP);
             Body ballBody = ball.GetBody();
             Body racketBody = racket.GetBody();
 

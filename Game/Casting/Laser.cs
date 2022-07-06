@@ -7,7 +7,7 @@ namespace cse210_10.Game.Casting
     /// <summary>
     /// 
     /// </summary>
-    public class Ball : Actor
+    public class Laser : Actor
     {
         private static Random random = new Random();
 
@@ -17,7 +17,7 @@ namespace cse210_10.Game.Casting
         /// <summary>
         /// Constructs a new instance of Actor.
         /// </summary>
-        public Ball(Body body, Image image, bool debug = false) : base(debug)
+        public Laser(Body body, Image image, bool debug = false) : base(debug)
         {
             this.body = body;
             this.image = image;

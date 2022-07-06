@@ -3,7 +3,7 @@ namespace cse210_10.Game.Casting
     /// <summary>
     /// A thing that participates in the game.
     /// </summary>
-    public class Brick : Actor
+    public class Alien : Actor
     {
         private Body body;
         private Animation animation;
@@ -12,7 +12,7 @@ namespace cse210_10.Game.Casting
         /// <summary>
         /// Constructs a new instance of Actor.
         /// </summary>
-        public Brick(Body body, Animation animation, int points, bool debug) : base(debug)
+        public Alien(Body body, Animation animation, int points, bool debug) : base(debug)
         {
             this.body = body;
             this.animation = animation;

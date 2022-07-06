@@ -5,11 +5,11 @@ using cse210_10.Game.Services;
 
 namespace cse210_10.Game.Scripting
 {
-    public class DrawBricksAction : Action
+    public class DrawAliensAction : Action
     {
         private VideoService videoService;
         
-        public DrawBricksAction(VideoService videoService)
+        public DrawAliensAction(VideoService videoService)
         {
             this.videoService = videoService;
         }
@@ -19,7 +19,7 @@ namespace cse210_10.Game.Scripting
             List<Actor> bricks = cast.GetActors(Constants.BRICK_GROUP);
             foreach (Actor actor in bricks)
             {
-                Brick brick = (Brick)actor;
+                Alien brick = (Alien)actor;
                 Body body = brick.GetBody();
 
                 if (brick.IsDebug())

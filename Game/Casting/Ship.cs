@@ -3,7 +3,7 @@ namespace cse210_10.Game.Casting
     /// <summary>
     /// A thing that participates in the game.
     /// </summary>
-    public class Racket : Actor
+    public class Ship : Actor
     {
         private Body body;
         private Animation animation;
@@ -11,7 +11,7 @@ namespace cse210_10.Game.Casting
         /// <summary>
         /// Constructs a new instance of Actor.
         /// </summary>
-        public Racket(Body body, Animation animation, bool debug) : base(debug)
+        public Ship(Body body, Animation animation, bool debug) : base(debug)
         {
             this.body = body;
             this.animation = animation;
