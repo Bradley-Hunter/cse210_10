@@ -175,7 +175,7 @@ namespace cse210_10.Game.Directing
                     int y = Constants.FIELD_TOP + r * Constants.BRICK_HEIGHT;
 
                     string color = rows[r][c][0].ToString();
-                    int frames = (int)Char.GetNumericValue(rows[r][c][1]);
+                    int frames = 1;//(int)Char.GetNumericValue(rows[r][c][1]);
                     int points = Constants.BRICK_POINTS;
 
                     Point position = new Point(x, y);
