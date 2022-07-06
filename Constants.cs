@@ -97,9 +97,9 @@ namespace cse210_10
 
         // BALL
         public static string BALL_GROUP = "balls";
-        public static string BALL_IMAGE = "Assets/Images/000.png";
-        public static int BALL_WIDTH = 28;
-        public static int BALL_HEIGHT = 28;
+        public static string BALL_IMAGE = "Assets/Images/laser.png";
+        public static int BALL_WIDTH = 5;
+        public static int BALL_HEIGHT = 10;
         public static int BALL_VELOCITY = 6;
 
         // RACKET
@@ -134,7 +134,7 @@ namespace cse210_10
                 } }
         };
 
-        public static int BRICK_WIDTH = 80;
+        public static int BRICK_WIDTH = 40;
         public static int BRICK_HEIGHT = 32;
         public static double BRICK_DELAY = 0.5;
         public static int BRICK_RATE = 4;
