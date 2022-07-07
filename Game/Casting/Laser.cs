@@ -77,8 +77,17 @@ namespace cse210_10.Game.Casting
             int index = random.Next(velocities.Count);
             double vx = velocities[index];
             double vy = -Constants.BALL_VELOCITY;
-            Point newVelocity = new Point((int)vx, (int)vy);
+            // changed so laser goes straight up when launched
+            Point newVelocity = new Point(0, (int)vy);
             body.SetVelocity(newVelocity);
+        }
+
+        // Class to move body to new position
+
+        public void setBody(Point point)
+        {
+            body.SetPosition(point);
+
         }
     }
 }
