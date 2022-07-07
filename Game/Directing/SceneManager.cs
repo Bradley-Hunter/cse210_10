@@ -171,8 +171,8 @@ namespace cse210_10.Game.Directing
             {
                 for (int c = 0; c < rows[r].Count; c++)
                 {
-                    int x = Constants.FIELD_LEFT + c * Constants.BRICK_WIDTH;
-                    int y = Constants.FIELD_TOP + r * Constants.BRICK_HEIGHT;
+                    int x = Constants.FIELD_LEFT + c * Constants.BRICK_WIDTH * 150 / 100;
+                    int y = Constants.FIELD_TOP + r * Constants.BRICK_HEIGHT * 150 / 100;
 
                     string color = rows[r][c][0].ToString();
                     int frames = 1;//(int)Char.GetNumericValue(rows[r][c][1]);
