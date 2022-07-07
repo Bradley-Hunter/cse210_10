@@ -71,7 +71,7 @@ namespace cse210_10.Game.Directing
         private void ActivateBall(Cast cast)
         {
             Laser ball = (Laser)cast.GetFirstActor(Constants.BALL_GROUP);
-            ball.Release();
+            ball.BounceY();
         }
 
         private void PrepareNextLevel(Cast cast, Script script)
