@@ -84,5 +84,13 @@ namespace cse210_10.Game.Casting
                 body.SetVelocity(newVelocity);
             }
         }
+
+        // Class to move body to new position
+
+        public void setBody(Point point)
+        {
+            body.SetPosition(point);
+
+        }
     }
 }
