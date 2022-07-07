@@ -144,8 +144,8 @@ namespace cse210_10.Game.Directing
         {
             cast.ClearActors(Constants.BALL_GROUP);
         
-            int x = Constants.CENTER_X - Constants.BALL_WIDTH / 2;
-            int y = Constants.SCREEN_HEIGHT - Constants.RACKET_HEIGHT - Constants.BALL_HEIGHT;
+            int x = -10;
+            int y = -10;
         
             Point position = new Point(x, y);
             Point size = new Point(Constants.BALL_WIDTH, Constants.BALL_HEIGHT);
@@ -320,7 +320,6 @@ namespace cse210_10.Game.Directing
 
         private void AddUpdateActions(Script script)
         {
-            script.AddAction(Constants.UPDATE, new MoveAliensAction());
             script.AddAction(Constants.UPDATE, new MoveLaserAction());
             script.AddAction(Constants.UPDATE, new MoveShipAction());
             script.AddAction(Constants.UPDATE, new CollideBordersAction(PhysicsService, AudioService));

@@ -28,7 +28,7 @@ namespace cse210_10.Game.Scripting
                         alien.BounceX();
                     }
                 }
-                if (xSteps < 0) {
+                if (xSteps <= 0) {
                     xSteps = 8;
                 }
             }
