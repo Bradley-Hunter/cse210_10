@@ -17,6 +17,7 @@ namespace cse210_10.Game.Casting
             this.body = body;
             this.animation = animation;
             this.points = points;
+            InitialVelocity();
         }
 
         /// <summary>
@@ -45,6 +46,20 @@ namespace cse210_10.Game.Casting
         {
             return points;
         }
-        
+
+        public void BounceX()
+        {
+            Point velocity = body.GetVelocity();
+            int vx = velocity.GetX() * -1;
+            int vy = velocity.GetY();
+            Point newVelocity = new Point((int)vx, (int)vy);
+            body.SetVelocity(newVelocity);
+        }
+
+        public void InitialVelocity() {
+            Point velocity = body.GetVelocity();
+            Point newVelocity = new Point(Constants.ALIEN_X_VELOCITY, 0);
+            body.SetVelocity(newVelocity);
+        }
     }
 }

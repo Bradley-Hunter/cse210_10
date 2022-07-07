@@ -139,6 +139,7 @@ namespace cse210_10
         public static double BRICK_DELAY = 0.5;
         public static int BRICK_RATE = 4;
         public static int BRICK_POINTS = 50;
+        public static int ALIEN_X_VELOCITY = 30;
 
         // DIALOG
         public static string DIALOG_GROUP = "dialogs";

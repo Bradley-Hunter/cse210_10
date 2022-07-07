@@ -320,6 +320,7 @@ namespace cse210_10.Game.Directing
 
         private void AddUpdateActions(Script script)
         {
+            script.AddAction(Constants.UPDATE, new MoveAliensAction());
             script.AddAction(Constants.UPDATE, new MoveLaserAction());
             script.AddAction(Constants.UPDATE, new MoveShipAction());
             script.AddAction(Constants.UPDATE, new CollideBordersAction(PhysicsService, AudioService));
