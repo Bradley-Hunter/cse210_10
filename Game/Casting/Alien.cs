@@ -47,6 +47,9 @@ namespace cse210_10.Game.Casting
             return points;
         }
 
+        /// <summary>
+        /// Negates current velocity in the x direction.
+        /// </summary>
         public void BounceX()
         {
             Point velocity = body.GetVelocity();
@@ -56,7 +59,10 @@ namespace cse210_10.Game.Casting
             body.SetVelocity(newVelocity);
         }
 
-        public void InitialVelocity() {
+        /// <summary>
+        /// Sets the initial velocity
+        /// </summary>
+        private void InitialVelocity() {
             Point velocity = body.GetVelocity();
             Point newVelocity = new Point(Constants.ALIEN_X_VELOCITY, 0);
             body.SetVelocity(newVelocity);

@@ -4,7 +4,7 @@ namespace cse210_10.Game.Scripting
     public class MoveAliensAction : Action
     {
         private int countdown = 0;
-        private int xSteps = 8;
+        private int xSteps = 9;
         public MoveAliensAction()
         {
         }
@@ -28,7 +28,7 @@ namespace cse210_10.Game.Scripting
                         alien.BounceX();
                     }
                 }
-                if (xSteps < 0) {
+                if (xSteps <= 0) {
                     xSteps = 8;
                 }
             }
