@@ -1,10 +1,19 @@
 using cse210_10.Game.Casting;
+using cse210_10.Game.Services;
+
+
 namespace cse210_10.Game.Scripting
 {
     public class MoveAliensAction : Action
     {
+        public static AudioService AudioService = new RaylibAudioService();
+        public static PhysicsService PhysicsService = new RaylibPhysicsService();
+        AlienBouncingAction alienbouncing = new AlienBouncingAction(PhysicsService, AudioService);
+        
         private int countdown = 0;
         private int xSteps = 9;
+
+        
         public MoveAliensAction()
         {
         }
@@ -24,9 +33,16 @@ namespace cse210_10.Game.Scripting
                     Point velocity = body.GetVelocity();
                     position = position.Add(velocity);
                     body.SetPosition(position);
-                    if (xSteps <= 0) {
-                        alien.BounceX();
-                    }
+                    
+                    // if (alienbouncing.alienHitBorder == true) {
+                    //     alien.BounceX();
+                    //     alien.moveDown();
+                    // }
+                    // else if (xSteps <= 0)
+                    // {
+                    //      alien.BounceX();
+                    //     alien.moveDown();
+                    // }
                 }
                 if (xSteps <= 0) {
                     xSteps = 8;
@@ -35,6 +51,11 @@ namespace cse210_10.Game.Scripting
             else {
                 countdown -= 1;
             }
+        
+
+        }
+        public void MoveAliensActionBackDown()
+        {
 
         }
     }
