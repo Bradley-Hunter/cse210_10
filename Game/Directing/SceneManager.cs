@@ -322,6 +322,8 @@ namespace cse210_10.Game.Directing
         {
             script.AddAction(Constants.UPDATE, new MoveLaserAction());
             script.AddAction(Constants.UPDATE, new MoveShipAction());
+            script.AddAction(Constants.UPDATE, new MoveAliensAction());
+            script.AddAction(Constants.UPDATE, new AlienBouncingAction(PhysicsService, AudioService));
             script.AddAction(Constants.UPDATE, new CollideBordersAction(PhysicsService, AudioService));
             script.AddAction(Constants.UPDATE, new CollideAlienAction(PhysicsService, AudioService));
             script.AddAction(Constants.UPDATE, new CollideShipAction(PhysicsService, AudioService));
