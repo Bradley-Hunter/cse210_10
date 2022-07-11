@@ -29,7 +29,7 @@ namespace cse210_10.Game.Scripting
             {
                 countdown = 30;
                 xSteps -= 1;
-                
+
                 foreach (Actor actor in aliens) 
                 {
                     Alien alien = (Alien)actor;
