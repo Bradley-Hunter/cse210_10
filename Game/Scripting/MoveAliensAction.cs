@@ -15,7 +15,7 @@ namespace cse210_10.Game.Scripting
             if (countdown <= 0) 
             {
                 countdown = 30;
-                xSteps -= 1;
+                xSteps -= 1; 
                 foreach (Actor actor in aliens) 
                 {
                     Alien alien = (Alien)actor;
