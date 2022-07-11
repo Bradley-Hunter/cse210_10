@@ -4,14 +4,18 @@ using cse210_10.Game.Services;
 
 namespace cse210_10.Game.Scripting
 {
+
     public class MoveAliensAction : Action
     {
+        
         public static AudioService AudioService = new RaylibAudioService();
         public static PhysicsService PhysicsService = new RaylibPhysicsService();
         AlienBouncingAction alienbouncing = new AlienBouncingAction(PhysicsService, AudioService);
         
         private int countdown = 0;
+        
         private int xSteps = 9;
+        
 
         
         public MoveAliensAction()
@@ -25,6 +29,7 @@ namespace cse210_10.Game.Scripting
             {
                 countdown = 30;
                 xSteps -= 1;
+                
                 foreach (Actor actor in aliens) 
                 {
                     Alien alien = (Alien)actor;
@@ -38,11 +43,11 @@ namespace cse210_10.Game.Scripting
                     //     alien.BounceX();
                     //     alien.moveDown();
                     // }
-                    // else if (xSteps <= 0)
-                    // {
-                    //      alien.BounceX();
-                    //     alien.moveDown();
-                    // }
+                    if (xSteps <= 0)
+                    {
+                        alien.BounceX();
+                        alien.moveDown();
+                    }
                 }
                 if (xSteps <= 0) {
                     xSteps = 8;
@@ -52,10 +57,6 @@ namespace cse210_10.Game.Scripting
                 countdown -= 1;
             }
         
-
-        }
-        public void MoveAliensActionBackDown()
-        {
 
         }
     }

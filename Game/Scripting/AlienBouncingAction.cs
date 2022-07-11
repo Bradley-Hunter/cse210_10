@@ -7,7 +7,9 @@ namespace cse210_10.Game.Scripting
 
     class AlienBouncingAction : Action
     {
-        // public bool alienHitBorder = false;
+        private int x = 0;
+        public bool alienHitBorder;
+        
         private AudioService audioService;
         private PhysicsService physicsService;
         public AlienBouncingAction(PhysicsService physicsService, AudioService audioService)
@@ -30,19 +32,25 @@ namespace cse210_10.Game.Scripting
 
                 if (x < Constants.FIELD_LEFT)
                 {
-                    // alienHitBorder = true;
-                    alien.BounceXForEach(cast);
+                    alienHitBorder = true;
+                    // alien.BounceX();
+                    // alien.moveDown();
                     audioService.PlaySound(bounceSound);
                 }
                 else if (x >= Constants.FIELD_RIGHT)
                 {
-                    // alienHitBorder= true;
-                    alien.BounceXForEach(cast);
+                    alienHitBorder= true;
+                    // alien.BounceX();
+                    // alien.BounceXForEach(cast);
+                    // alien.moveDown();
                     audioService.PlaySound(bounceSound);
+                }
+                else {
+                    alienHitBorder = false;
                 }
 
                 
-                else if (y >= Constants.FIELD_BOTTOM)
+                if (y >= Constants.FIELD_BOTTOM)
                 {
                     Stats stats = (Stats)cast.GetFirstActor(Constants.STATS_GROUP);
                     stats.RemoveLife();
@@ -57,21 +65,22 @@ namespace cse210_10.Game.Scripting
                         audioService.PlaySound(overSound);
                     }
                 }
+                
             }
+            // if (x <= 10)
+            // {
+            //     alienHitBorder = false;
+
+            // }
+            // else {
+            //     x+=1;
+            //     alienHitBorder = true;
+            // }
         }
         // public bool getAlienHitBorder()
         // {
         //     return alienHitBorder;
-        // }
+        
 
-        // private void alienhitborder()
-        // {
-        //     foreach (Alien alien in aliens)
-        //     {
-
-                
-                
-        //     }
-        // }
     }
 }
