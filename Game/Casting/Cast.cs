@@ -117,6 +117,16 @@ namespace cse210_10.Game.Casting
                 actors[group].Remove(actor);
             }
         }
-
+        
+        public void ReverseActorsXVelocity(string group)
+        {
+            List<Actor> actors = GetActors(group);
+            foreach (Actor bill in actors)
+            {
+                Alien alien = (Alien)bill;
+                alien.BounceX();
+                alien.moveDown();
+            } 
+        }
     }
 }
