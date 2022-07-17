@@ -11,7 +11,7 @@ namespace cse210_10
         // ----------------------------------------------------------------------------------------- 
 
         // GAME
-        public static string GAME_NAME = "Batter";
+        public static string GAME_NAME = "Invaders from Space";
         public static int FRAME_RATE = 60;
 
         // SCREEN
